@@ -9,8 +9,10 @@ stages:
 
 build:
   stage: build
-  image: golang:1.12
+  image: golang:1-buster
   script:
+    - apt update
+    - apt install -y imagemagick
     - go run main.go
     - mkdir dist
     - mv index.html dist/

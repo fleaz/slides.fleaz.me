@@ -12,7 +12,7 @@ build:
   image: golang:1-buster
   script:
     - apt update
-    - apt install -y imagemagick
+    - apt install -y libmagickwand-dev imagemagick
     - go run main.go
     - mkdir dist
     - mv index.html dist/

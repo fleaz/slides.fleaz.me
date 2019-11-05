@@ -9,10 +9,10 @@ stages:
 
 build:
   stage: build
-  image: golang:1-buster
+  image: ubuntu:bionic
   script:
     - apt update
-    - apt install -y --no-install-recommends libmagickwand-dev imagemagick libmagickwand-6-headers libmagickcore-dev
+    - apt install -y --no-install-recommends libmagickwand-dev imagemagick golang
     - go run main.go
     - mkdir dist
     - mv index.html dist/

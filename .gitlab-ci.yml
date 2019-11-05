@@ -11,7 +11,8 @@ build:
   stage: build
   image: golang:1-alpine
   script:
-    - apk add --no-cache imagemagick pkgconfig
+    - apk add --no-cache imagemagick pkgconfig imagemagick-dev gcc libc-dev
+    - mkdir previews
     - go run main.go
     - mkdir dist
     - mv index.html dist/

@@ -12,7 +12,7 @@ build:
   image: golang:1-buster
   script:
     - apt update
-    - apt install -y --no-install-recommends libmagickwand-dev imagemagick libmagickwand-6-headers
+    - apt install -y --no-install-recommends libmagickwand-dev imagemagick libmagickwand-6-headers libmagickcore-dev
     - go run main.go
     - mkdir dist
     - mv index.html dist/

@@ -11,9 +11,10 @@ import (
 )
 
 type Talk struct {
-	Title   string
-	Preview string
-	Path    string
+	Title       string
+	Preview     string
+	Path        string
+	Description string
 }
 
 func generatePreview(path string) Talk {
@@ -26,7 +27,7 @@ func generatePreview(path string) Talk {
 	mw.SetIteratorIndex(0)
 	mw.SetImageFormat("jpg")
 	mw.WriteImage(imagePath)
-	return Talk{Title: result[1], Preview: imagePath, Path: path}
+	return Talk{Title: result[1], Preview: imagePath, Path: path, Description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."}
 }
 
 func main() {

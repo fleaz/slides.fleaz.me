@@ -9,10 +9,9 @@ stages:
 
 build:
   stage: build
-  image: ubuntu:bionic
+  image: golang:1-alpine
   script:
-    - apt update
-    - apt install -y --no-install-recommends libmagickwand-dev imagemagick golang
+    - apk add --no-cache imagemagick
     - go run main.go
     - mkdir dist
     - mv index.html dist/

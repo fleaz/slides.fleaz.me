@@ -54,6 +54,11 @@ func main() {
 		data = append(data, t)
 	}
 
+	for i := len(data)/2 - 1; i >= 0; i-- {
+		opp := len(data) - 1 - i
+		data[i], data[opp] = data[opp], data[i]
+	}
+
 	tmpl, err := template.ParseFiles("template.html")
 	if err != nil {
 		panic(err)

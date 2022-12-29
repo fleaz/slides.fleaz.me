@@ -24,7 +24,7 @@ build:
 
 deploy:
   stage: deploy
-  image: node:12-alpine
+  image: node:16-alpine
   script:
     - npm i -g netlify-cli
     - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod

@@ -1,0 +1,36 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.21
+
+      - name: Build
+        run: |
+          sudo apt install pkg-config libmagickwand-dev imagemagick gcc libc-dev
+          mkdir {previews,dist}
+          go run main.go
+          mv index.html dist/
+          mv previews/ dist/
+          mv talks/ dist/
+
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: "slidec.fleaz.me"
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+          AWS_S3_ENDPOINNT: "https://s3.fleaz.me"
+          SOURCE_DIR: 'dist'

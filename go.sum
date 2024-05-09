@@ -1,4 +1,4 @@
-gopkg.in/gographics/imagick.v2 v2.5.0 h1:3wOeg/IgtagJtveISUaX9A3F/L/5PxaFHkAz5AzgbgA=
-gopkg.in/gographics/imagick.v2 v2.5.0/go.mod h1:of4TbGX8yMcpgWkWFjha7FsOFr+NjOJ5O1qtKU27Yj0=
-gopkg.in/gographics/imagick.v3 v3.2.0 h1:eUwlkCw2fa20OGu47G39Im8c50S9n/CVkh8PwtOKExA=
-gopkg.in/gographics/imagick.v3 v3.2.0/go.mod h1:HbW83cYCl1jftZi3B/VZpVqsuNi4vW7qUrghjxBiT+8=
+gopkg.in/gographics/imagick.v2 v2.6.4 h1:H7UgF2ZAdV85sMB9YU2c6r3dpp9SP4N6UF+bG3OK728=
+gopkg.in/gographics/imagick.v2 v2.6.4/go.mod h1:/QVPLV/iKdNttRKthmDkeeGg+vdHurVEPc8zkU0XgBk=
+gopkg.in/gographics/imagick.v3 v3.5.3 h1:Ho8/2Uu76Y1Z5P65dUBhh5ZeKS3ZcvYH12amWZNpSFA=
+gopkg.in/gographics/imagick.v3 v3.5.3/go.mod h1:+Q9nyA2xRZXrDyTtJ/eko+8V/5E7bWYs08ndkZp8UmA=

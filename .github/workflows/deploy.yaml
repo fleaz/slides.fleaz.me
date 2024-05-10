@@ -29,7 +29,7 @@ jobs:
         with:
           args: --delete
         env:
-          AWS_S3_BUCKET: "slidec.fleaz.me"
+          AWS_S3_BUCKET: "slides.fleaz.me"
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
           AWS_S3_ENDPOINNT: "https://s3.fleaz.me"

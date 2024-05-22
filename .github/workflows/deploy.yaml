@@ -16,13 +16,16 @@ jobs:
         with:
           go-version: 1.21
 
+      - name: Install dependencies
+        run: |
+          sudo apt install pkg-config libmagickwand-dev imagemagick gcc libc-dev
+
       - name: Patch ghostsccript thanks to CVE-2018-16509
         run: |
           sudo sed -i '$i<policy domain="coder" rights="read | write" pattern="PDF" />' /etc/ImageMagick-6/policy.xml
 
       - name: Build
         run: |
-          sudo apt install pkg-config libmagickwand-dev imagemagick gcc libc-dev
           mkdir {previews,dist}
           go run main.go
           ls -laR

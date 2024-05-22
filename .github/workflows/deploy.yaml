@@ -21,6 +21,7 @@ jobs:
           sudo apt install pkg-config libmagickwand-dev imagemagick gcc libc-dev
           mkdir {previews,dist}
           go run main.go
+          ls -laR
           mv index.html dist/
           mv previews/ dist/
           mv talks/ dist/

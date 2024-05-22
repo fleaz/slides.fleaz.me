@@ -18,7 +18,7 @@ jobs:
 
       - name: Patch ghostsccript thanks to CVE-2018-16509
         run: |
-          sed -i '$i<policy domain="coder" rights="read | write" pattern="PDF" />' /etc/ImageMagick-6/policy.xml
+          sudo sed -i '$i<policy domain="coder" rights="read | write" pattern="PDF" />' /etc/ImageMagick-6/policy.xml
 
       - name: Build
         run: |

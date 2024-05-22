@@ -23,10 +23,16 @@ func generatePreview(path string) Talk {
 	imagePath := fmt.Sprintf("previews/%s.jpg", result[1])
 	mw := imagick.NewMagickWand()
 	defer mw.Destroy()
-	mw.ReadImage(path)
+	err := mw.ReadImage(path)
+	if err != nil {
+		panic(err)
+	}
 	mw.SetIteratorIndex(0)
 	mw.SetImageFormat("jpg")
-	mw.WriteImage(imagePath)
+	err = mw.WriteImage(imagePath)
+	if err != nil {
+		panic(err)
+	}
 	return Talk{Title: result[1], Preview: imagePath, Path: path, Description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."}
 }
 
